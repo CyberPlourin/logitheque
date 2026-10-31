@@ -1,0 +1,40 @@
+{
+  "titre": "Logithèque Cyberia",
+  "intro": "Des logiciels pratiques conçus au fablab de Cyberia pour les associations et les habitants de Plourin. À télécharger gratuitement et à installer sur un ordinateur Windows.",
+  "contact": "Cyberia — Espace public numérique de Plourin",
+  "applis": [
+    {
+      "nom": "Tournoi de pétanque",
+      "pour": "les clubs et associations",
+      "description": "Organise un concours de pétanque : inscription des équipes, tirage des parties et classement. Deux formats au choix : système suisse ou fil de l'eau.",
+      "version": "",
+      "systeme": "Windows 10 et 11",
+      "taille": "",
+      "lien": "",
+      "image": "",
+      "masquee": false
+    },
+    {
+      "nom": "Carport",
+      "pour": "",
+      "description": "Description à compléter.",
+      "version": "",
+      "systeme": "Windows 10 et 11",
+      "taille": "",
+      "lien": "",
+      "image": "",
+      "masquee": true
+    },
+    {
+      "nom": "Gestion des heures RH",
+      "pour": "",
+      "description": "Description à compléter.",
+      "version": "",
+      "systeme": "Windows 10 et 11",
+      "taille": "",
+      "lien": "",
+      "image": "",
+      "masquee": true
+    }
+  ]
+}

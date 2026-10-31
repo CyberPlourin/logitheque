@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Logithèque Cyberia</title>
+<meta name="description" content="Logiciels conçus au fablab de Cyberia, à Plourin, à télécharger gratuitement.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+
+/* Catalogue de fiches sur fond brume marine : en-tête, grille de fiches, guide d'installation, contact */
+:root{
+  --bg:#EDF2F2; --surface:#FFFFFF; --ink:#13242C; --muted:#4D646E; --line:#C9D6D9;
+  --accent:#0A6A8C; --accent-ink:#FFFFFF; --accent-soft:#D6E8EE; --tile:#DCE7E9;
+  --warn-soft:#FBEFD3; --warn-ink:#6A4900; --danger:#A3282B;
+  --font-display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --font-body:"Atkinson Hyperlegible","Segoe UI",system-ui,sans-serif;
+  --font-mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E191E; --surface:#15242B; --ink:#E3EDEF; --muted:#9BB1B8; --line:#29404A;
+  --accent:#55B6DA; --accent-ink:#05202B; --accent-soft:#17394A; --tile:#1C3038;
+  --warn-soft:#3A2D10; --warn-ink:#F0CF86; --danger:#F08A84; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E191E; --surface:#15242B; --ink:#E3EDEF; --muted:#9BB1B8; --line:#29404A;
+  --accent:#55B6DA; --accent-ink:#05202B; --accent-soft:#17394A; --tile:#1C3038;
+  --warn-soft:#3A2D10; --warn-ink:#F0CF86; --danger:#F08A84; color-scheme:dark}
+
+body{background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:17px;line-height:1.55}
+.wrap{max-width:1060px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+
+.masthead{padding-block:48px 28px;display:grid;gap:12px}
+.eyebrow{font-family:var(--font-mono);font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0}
+h1{font-family:var(--font-display);font-weight:800;font-size:clamp(2.3rem,6vw,3.8rem);line-height:1;letter-spacing:-.02em;margin:0;text-wrap:balance}
+.intro{max-width:62ch;margin:0;font-size:1.1rem;color:var(--muted)}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:20px;padding-block:8px 40px}
+.fiche{background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden;display:flex;flex-direction:column;min-width:0}
+.vignette{aspect-ratio:16/10;max-width:100%;background:var(--tile);display:grid;place-items:center;overflow:hidden;border-bottom:1px solid var(--line)}
+.vignette img{width:100%;height:100%;object-fit:cover;display:block}
+.mono{font-family:var(--font-display);font-weight:800;font-size:3.4rem;color:var(--accent);letter-spacing:-.03em;
+  background:repeating-linear-gradient(0deg,transparent 0 23px,var(--line) 23px 24px);width:100%;height:100%;display:grid;place-items:center}
+.fiche-body{padding:18px 20px 20px;display:flex;flex-direction:column;gap:10px;flex:1;min-width:0}
+.fiche h2{font-family:var(--font-display);font-weight:700;font-size:1.45rem;line-height:1.15;margin:0;text-wrap:balance}
+.pour{margin:0;font-size:.95rem;color:var(--muted)}
+.pour b{font-family:var(--font-mono);font-weight:500;font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin-right:6px}
+.desc{margin:0;overflow-wrap:anywhere}
+.meta{display:flex;flex-wrap:wrap;gap:6px 14px;margin:0;font-family:var(--font-mono);font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.spacer{flex:1}
+.dl{display:flex;align-items:center;justify-content:center;gap:8px;min-height:52px;padding:10px 16px;border-radius:8px;background:var(--accent);color:var(--accent-ink);
+  font-weight:700;font-size:1.08rem;text-decoration:none;border:2px solid var(--accent)}
+.dl:hover{filter:brightness(1.08)}
+.dl:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.dl.is-off{background:transparent;color:var(--muted);border:2px dashed var(--line);font-weight:400}
+.dl svg{width:20px;height:20px}
+
+
+.empty{grid-column:1/-1;background:var(--surface);border:1px dashed var(--line);border-radius:10px;padding:32px 24px;text-align:center;color:var(--muted)}
+.empty strong{display:block;color:var(--ink);font-size:1.15rem;margin-bottom:4px}
+
+.guide{border-top:2px solid var(--ink);padding-block:28px 32px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:28px}
+.guide h2{font-family:var(--font-display);font-weight:700;font-size:1.7rem;line-height:1.1;margin:0 0 8px}
+.guide p{margin:0;color:var(--muted)}
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:14px;counter-reset:s}
+.steps li{counter-increment:s;display:grid;grid-template-columns:40px minmax(0,1fr);gap:12px;align-items:start}
+.steps li::before{content:counter(s);font-family:var(--font-display);font-weight:800;font-size:1.3rem;width:40px;height:40px;border-radius:50%;
+  display:grid;place-items:center;background:var(--accent-soft);color:var(--accent)}
+.steps strong{display:block}
+.steps .note{margin-top:6px;background:var(--warn-soft);color:var(--warn-ink);border-radius:8px;padding:10px 12px;font-size:.95rem}
+.kbd{font-family:var(--font-mono);font-size:.9em;background:var(--tile);padding:1px 6px;border-radius:4px;white-space:nowrap}
+
+.contact{border-top:1px solid var(--line);padding-block:22px 40px;display:flex;flex-wrap:wrap;gap:6px 18px;align-items:baseline;color:var(--muted)}
+.contact b{font-family:var(--font-mono);font-weight:500;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+.contact span{user-select:text;white-space:pre-line;color:var(--ink)}
+
+
+
+@media (max-width:720px){.guide{grid-template-columns:minmax(0,1fr)}.masthead{padding-block:32px 20px}}
+@media (prefers-reduced-motion:no-preference){.dl{transition:filter .15s}}
+.err{grid-column:1/-1;background:var(--warn-soft);color:var(--warn-ink);border-radius:10px;padding:20px 24px}
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0}
+img{max-width:100%}
+</style>
+</head>
+<body>
+<div id="app"><div class="wrap"><header class="masthead"><h1>Logithèque Cyberia</h1></header></div></div>
+<script>
+(function(){
+  var app = document.getElementById('app');
+  function esc(s){ return String(s == null ? '' : s).replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
+  function safeLink(s){ s = String(s || '').trim(); return /^https:\/\//i.test(s) ? s : ''; }
+  function safeImg(s){ s = String(s || '').trim(); return /^(https:\/\/|images\/)[^"'<>\s]+$/i.test(s) ? s : ''; }
+  function initials(n){
+    var w = String(n || '?').trim().split(/\s+/).filter(function(x){ return x.length > 2; });
+    return (w.length > 1 ? w[0][0] + w[1][0] : String(n || '?').slice(0, 2)).toUpperCase();
+  }
+  var DL = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="M7 10l5 5 5-5"/><path d="M5 20h14"/></svg>';
+
+  function card(a){
+    var img = safeImg(a.image), link = safeLink(a.lien), meta = [];
+    if (a.version) meta.push('<span>Version ' + esc(a.version) + '</span>');
+    if (a.systeme) meta.push('<span>' + esc(a.systeme) + '</span>');
+    if (a.taille) meta.push('<span>' + esc(a.taille) + '</span>');
+    return '<article class="fiche">' +
+      '<div class="vignette">' + (img ? '<img src="' + esc(img) + '" alt="Capture d’écran de ' + esc(a.nom) + '" loading="lazy">' : '<div class="mono" aria-hidden="true">' + esc(initials(a.nom)) + '</div>') + '</div>' +
+      '<div class="fiche-body">' +
+        '<h2>' + esc(a.nom) + '</h2>' +
+        (a.pour ? '<p class="pour"><b>Pour</b>' + esc(a.pour) + '</p>' : '') +
+        (a.description ? '<p class="desc">' + esc(a.description) + '</p>' : '') +
+        (meta.length ? '<p class="meta">' + meta.join('') + '</p>' : '') +
+        '<div class="spacer"></div>' +
+        (link ? '<a class="dl" href="' + esc(link) + '">' + DL + 'Télécharger</a>' : '<span class="dl is-off">Bientôt disponible</span>') +
+      '</div></article>';
+  }
+
+  function render(d, error){
+    d = d || {};
+    var list = (d.applis || []).filter(function(a){ return a && a.nom && !a.masquee; });
+    if (d.titre) document.title = d.titre;
+    var h = '<div class="wrap">';
+    h += '<header class="masthead"><p class="eyebrow">Fablab · Espace public numérique</p><h1>' + esc(d.titre || 'Logithèque Cyberia') + '</h1>' + (d.intro ? '<p class="intro">' + esc(d.intro) + '</p>' : '') + '</header>';
+    h += '<section class="grid" aria-label="Applications">';
+    if (error) h += '<div class="err"><strong>La liste des applis n’a pas pu être chargée.</strong><br>' + esc(error) + '</div>';
+    else if (!list.length) h += '<div class="empty"><strong>Aucune appli en ligne pour l’instant.</strong>Revenez bientôt, ou passez nous voir à Cyberia.</div>';
+    else list.forEach(function(a){ h += card(a); });
+    h += '</section>';
+    h += '<section class="guide" aria-labelledby="g-t"><div><h2 id="g-t">Installer une appli</h2><p>Quatre étapes, sur un ordinateur Windows. Comptez deux minutes.</p></div><ol class="steps">' +
+      '<li><div><strong>Cliquez sur « Télécharger ».</strong>Le fichier arrive dans le dossier <span class="kbd">Téléchargements</span> de votre ordinateur.</div></li>' +
+      '<li><div><strong>Ouvrez le fichier.</strong>Double-cliquez dessus. S’il se termine par <span class="kbd">.zip</span>, faites d’abord un clic droit puis « Extraire tout ».</div></li>' +
+      '<li><div><strong>Si Windows affiche « Windows a protégé votre ordinateur »</strong>cliquez sur <span class="kbd">Informations complémentaires</span>, puis sur <span class="kbd">Exécuter quand même</span>.<div class="note">Ce message est normal : nos logiciels sont fabriqués à Cyberia et ne portent pas la signature payante d’un éditeur commercial.</div></div></li>' +
+      '<li><div><strong>Suivez l’installation.</strong>Une icône apparaît sur le bureau : l’appli est prête.</div></li>' +
+      '</ol></section>';
+    if (d.contact) h += '<footer class="contact"><b>Besoin d’aide ?</b><span>' + esc(d.contact) + '</span></footer>';
+    app.innerHTML = h + '</div>';
+  }
+
+  fetch('apps.json', { cache: 'no-cache' })
+    .then(function(r){ if (!r.ok) throw new Error('Fichier apps.json introuvable (erreur ' + r.status + ').'); return r.text(); })
+    .then(function(t){
+      try { render(JSON.parse(t)); }
+      catch (e) { render(null, 'Le fichier apps.json contient une erreur de syntaxe (virgule ou guillemet en trop ou manquant). Détail : ' + e.message); }
+    })
+    .catch(function(e){ render(null, location.protocol === 'file:' ? 'Cette page doit être ouverte depuis son adresse en ligne (GitHub Pages), pas en double-cliquant sur le fichier.' : e.message); });
+})();
+</script>
+</body>
+</html>
