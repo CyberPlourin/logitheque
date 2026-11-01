@@ -106,7 +106,7 @@ img{max-width:100%}
     if (a.systeme) meta.push('<span>' + esc(a.systeme) + '</span>');
     if (a.taille) meta.push('<span>' + esc(a.taille) + '</span>');
     return '<article class="fiche">' +
-      '<div class="vignette">' + (img ? '<img src="' + esc(img) + '" alt="Capture d’écran de ' + esc(a.nom) + '" loading="lazy">' : '<div class="mono" aria-hidden="true">' + esc(initials(a.nom)) + '</div>') + '</div>' +
+      '<div class="vignette">' + (img ? '<img src="' + esc(img) + '" alt="Capture d’écran de ' + esc(a.nom) + '" loading="lazy">' : '<div class="mono" aria-hidden="true">' + esc(a.sigle ? String(a.sigle).slice(0, 4) : initials(a.nom)) + '</div>') + '</div>' +
       '<div class="fiche-body">' +
         '<h2>' + esc(a.nom) + '</h2>' +
         (a.pour ? '<p class="pour"><b>Pour</b>' + esc(a.pour) + '</p>' : '') +

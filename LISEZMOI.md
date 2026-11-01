@@ -22,6 +22,7 @@ Les blocs sont séparés par une virgule, sauf après le dernier. Si la page aff
 | Champ | Exemple | Remarque |
 |---|---|---|
 | `nom` | `"Tournoi de pétanque"` | obligatoire |
+| `sigle` | `"TP"` | lettres affichées dans la vignette quand il n'y a pas de capture (4 caractères max) ; vide = calculées depuis le nom |
 | `pour` | `"les clubs et associations"` | s'affiche « Pour … » |
 | `description` | `"Organise un concours…"` | deux ou trois phrases simples |
 | `version` | `"1.2"` | |
