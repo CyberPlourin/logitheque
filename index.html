@@ -53,6 +53,8 @@ h1{font-family:var(--font-display);font-weight:800;font-size:clamp(2.3rem,6vw,3.
 .dl:hover{filter:brightness(1.08)}
 .dl:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
 .dl.is-off{background:transparent;color:var(--muted);border:2px dashed var(--line);font-weight:400}
+.dl-2{background:transparent;color:var(--accent);min-height:44px;font-size:1rem}
+.dl-2:hover{filter:none;background:var(--accent-soft)}
 .dl svg{width:20px;height:20px}
 
 
@@ -102,6 +104,8 @@ img{max-width:100%}
 
   function card(a){
     var img = safeImg(a.image), link = safeLink(a.lien), meta = [];
+    var dlfile = safeLink(a.telecharger), dlname = '';
+    if (dlfile) { dlname = decodeURIComponent(dlfile.split('/').pop().split('?')[0]); if (!dlname || dlname === 'index.html') dlname = String(a.nom).normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^A-Za-z0-9]+/g, '_').replace(/^_|_$/g, '') + '.html'; }
     if (a.version) meta.push('<span>Version ' + esc(a.version) + '</span>');
     if (a.systeme) meta.push('<span>' + esc(a.systeme) + '</span>');
     if (a.taille) meta.push('<span>' + esc(a.taille) + '</span>');
@@ -114,6 +118,7 @@ img{max-width:100%}
         (meta.length ? '<p class="meta">' + meta.join('') + '</p>' : '') +
         '<div class="spacer"></div>' +
         (link ? '<a class="dl" href="' + esc(link) + '"' + (a.type === 'web' ? ' target="_blank" rel="noopener">' + WEB + 'Ouvrir dans le navigateur' : '>' + DL + 'Télécharger') + '</a>' : '<span class="dl is-off">Bientôt disponible</span>') +
+        (dlfile ? '<a class="dl dl-2" href="' + esc(dlfile) + '" download="' + esc(dlname) + '">' + DL + 'Télécharger le fichier</a>' : '') +
       '</div></article>';
   }
 

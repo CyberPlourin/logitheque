@@ -72,6 +72,7 @@
       "systeme": "Navigateur web, sur ordinateur",
       "taille": "",
       "lien": "https://cyberplourin.github.io/carport-3d/",
+      "telecharger": "https://cyberplourin.github.io/carport-3d/index.html",
       "image": "images/carport.png",
       "masquee": false,
       "type": "web"
@@ -85,6 +86,7 @@
       "systeme": "Navigateur web (Edge ou Chrome), sur ordinateur",
       "taille": "",
       "lien": "https://cyberplourin.github.io/Gestion_Heures_RH/",
+      "telecharger": "https://cyberplourin.github.io/Gestion_Heures_RH/Gestion_Heures_RH.html",
       "image": "images/heuresrh.png",
       "masquee": false,
       "type": "web"

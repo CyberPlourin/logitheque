@@ -31,6 +31,7 @@ Les blocs sont séparés par une virgule, sauf après le dernier. Si la page aff
 | `lien` | `"https://github.com/xtofm/petanque/releases/latest/download/Petanque-Setup.exe"` | lien **direct** vers le fichier ; vide = « Bientôt disponible » |
 | `image` | `"images/petanque.png"` | capture facultative, déposée dans un dossier `images/` du dépôt |
 | `masquee` | `true` / `false` | `true` = fiche cachée au public (brouillon) |
+| `telecharger` | `"https://cyberplourin.github.io/Gestion_Heures_RH/Gestion_Heures_RH.html"` | facultatif : ajoute un second bouton « Télécharger le fichier » (utile pour les pages web à garder sur son ordinateur) |
 | `type` | `"web"` | facultatif : pour une page web, le bouton devient « Ouvrir dans le navigateur » au lieu de « Télécharger » |
 
 ## Lien de téléchargement direct depuis une release GitHub
