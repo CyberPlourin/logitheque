@@ -98,6 +98,8 @@ img{max-width:100%}
   }
   var DL = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="M7 10l5 5 5-5"/><path d="M5 20h14"/></svg>';
 
+  var WEB = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6"/><path d="M20 4l-9 9"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>';
+
   function card(a){
     var img = safeImg(a.image), link = safeLink(a.lien), meta = [];
     if (a.version) meta.push('<span>Version ' + esc(a.version) + '</span>');
@@ -111,7 +113,7 @@ img{max-width:100%}
         (a.description ? '<p class="desc">' + esc(a.description) + '</p>' : '') +
         (meta.length ? '<p class="meta">' + meta.join('') + '</p>' : '') +
         '<div class="spacer"></div>' +
-        (link ? '<a class="dl" href="' + esc(link) + '">' + DL + 'Télécharger</a>' : '<span class="dl is-off">Bientôt disponible</span>') +
+        (link ? '<a class="dl" href="' + esc(link) + '"' + (a.type === 'web' ? ' target="_blank" rel="noopener">' + WEB + 'Ouvrir dans le navigateur' : '>' + DL + 'Télécharger') + '</a>' : '<span class="dl is-off">Bientôt disponible</span>') +
       '</div></article>';
   }
 
@@ -126,7 +128,7 @@ img{max-width:100%}
     else if (!list.length) h += '<div class="empty"><strong>Aucune appli en ligne pour l’instant.</strong>Revenez bientôt, ou passez nous voir à Cyberia.</div>';
     else list.forEach(function(a){ h += card(a); });
     h += '</section>';
-    h += '<section class="guide" aria-labelledby="g-t"><div><h2 id="g-t">Installer une appli</h2><p>Quatre étapes, sur un ordinateur Windows. Comptez deux minutes.</p></div><ol class="steps">' +
+    h += '<section class="guide" aria-labelledby="g-t"><div><h2 id="g-t">Installer une appli</h2><p>Pour les applis à télécharger, sur un ordinateur Windows. Comptez deux minutes. Les applis « Ouvrir dans le navigateur » ne s\u2019installent pas.</p></div><ol class="steps">' +
       '<li><div><strong>Cliquez sur « Télécharger ».</strong>Le fichier arrive dans le dossier <span class="kbd">Téléchargements</span> de votre ordinateur.</div></li>' +
       '<li><div><strong>Ouvrez le fichier.</strong>Double-cliquez dessus. S’il se termine par <span class="kbd">.zip</span>, faites d’abord un clic droit puis « Extraire tout ».</div></li>' +
       '<li><div><strong>Si Windows affiche « Windows a protégé votre ordinateur »</strong>cliquez sur <span class="kbd">Informations complémentaires</span>, puis sur <span class="kbd">Exécuter quand même</span>.<div class="note">Ce message est normal : nos logiciels sont fabriqués à Cyberia et ne portent pas la signature payante d’un éditeur commercial.</div></div></li>' +
