@@ -48,6 +48,17 @@
       "masquee": false
     },
     {
+      "nom": "Tickets de consommation",
+      "pour": "les associations et organisateurs d'événements",
+      "description": "Crée des planches de tickets à imprimer (2 €, 1 €, 0,50 €), avec le nom de votre événement en filigrane et un numéro unique sur chaque ticket.",
+      "version": "1.0",
+      "systeme": "Windows 10 et 11",
+      "taille": "32 Mo",
+      "lien": "https://github.com/CyberPlourin/tickets-consommation/releases/latest/download/Tickets-Consommation.exe",
+      "image": "",
+      "masquee": false
+    },
+    {
       "nom": "Carport",
       "pour": "",
       "description": "Description à compléter.",
