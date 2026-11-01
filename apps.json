@@ -79,14 +79,15 @@
     {
       "nom": "Gestion des heures RH",
       "sigle": "",
-      "pour": "",
-      "description": "Description à compléter.",
-      "version": "",
-      "systeme": "Windows 10 et 11",
+      "pour": "les mairies et petites structures",
+      "description": "Suivi par agent et par année des congés, garde d'enfant, récupération, arrêts maladie, absences familiales et heures supplémentaires, dans un seul tableau. Les données restent sur votre poste.",
+      "version": "1.0",
+      "systeme": "Navigateur web (Edge ou Chrome), sur ordinateur",
       "taille": "",
-      "lien": "",
+      "lien": "https://cyberplourin.github.io/Gestion_Heures_RH/",
       "image": "",
-      "masquee": true
+      "masquee": false,
+      "type": "web"
     }
   ]
 }
