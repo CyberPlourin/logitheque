@@ -4,13 +4,46 @@
   "contact": "Cyberia — Espace public numérique de Plourin",
   "applis": [
     {
-      "nom": "Tournoi de pétanque",
+      "nom": "Pétanque – système suisse",
       "pour": "les clubs et associations",
-      "description": "Organise un concours de pétanque : inscription des équipes, tirage des parties et classement. Deux formats au choix : système suisse ou fil de l'eau.",
-      "version": "",
+      "description": "Concours en plusieurs parties : à chaque tour, les équipes rencontrent des adversaires de même niveau. Classement automatique.",
+      "version": "1.0",
       "systeme": "Windows 10 et 11",
-      "taille": "",
-      "lien": "",
+      "taille": "12 Mo",
+      "lien": "https://github.com/CyberPlourin/petanque/releases/latest/download/Petanque-Suisse.exe",
+      "image": "",
+      "masquee": false
+    },
+    {
+      "nom": "Pétanque – fil de l'eau",
+      "pour": "les clubs et associations",
+      "description": "Les parties s'enchaînent sans attendre la fin du tour : dès qu'une équipe a fini, elle rejoue contre une autre équipe libre.",
+      "version": "1.0",
+      "systeme": "Windows 10 et 11",
+      "taille": "12 Mo",
+      "lien": "https://github.com/CyberPlourin/petanque/releases/latest/download/Petanque-FilDeLeau.exe",
+      "image": "",
+      "masquee": false
+    },
+    {
+      "nom": "Pétanque – mêlée",
+      "pour": "les clubs et associations",
+      "description": "Les joueurs s'inscrivent seuls et les équipes sont tirées au sort à chaque partie. Calendrier, scores et classement individuel.",
+      "version": "1.0",
+      "systeme": "Windows 10 et 11",
+      "taille": "12 Mo",
+      "lien": "https://github.com/CyberPlourin/petanque/releases/latest/download/Petanque-Melee.exe",
+      "image": "",
+      "masquee": false
+    },
+    {
+      "nom": "Pétanque – doublettes ou triplettes",
+      "pour": "les clubs et associations",
+      "description": "Les équipes arrivent déjà formées. Calendrier fixé d'avance, sans rencontre entre équipes d'une même commune en première partie.",
+      "version": "1.0",
+      "systeme": "Windows 10 et 11",
+      "taille": "12 Mo",
+      "lien": "https://github.com/CyberPlourin/petanque/releases/latest/download/Petanque-Equipes.exe",
       "image": "",
       "masquee": false
     },
