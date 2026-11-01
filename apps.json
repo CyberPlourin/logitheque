@@ -83,7 +83,7 @@
       "pour": "les mairies et petites structures",
       "description": "Suivi par agent et par année des congés, garde d'enfant, récupération, arrêts maladie, absences familiales et heures supplémentaires, dans un seul tableau. Les données restent sur votre poste.",
       "version": "1.0",
-      "systeme": "Navigateur web (Edge ou Chrome), sur ordinateur",
+      "systeme": "Navigateur web (Brave, Edge ou Chrome), sur ordinateur",
       "taille": "",
       "lien": "https://cyberplourin.github.io/Gestion_Heures_RH/",
       "telecharger": "https://cyberplourin.github.io/Gestion_Heures_RH/Gestion_Heures_RH.html",
