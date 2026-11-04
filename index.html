@@ -118,7 +118,7 @@ img{max-width:100%}
         (meta.length ? '<p class="meta">' + meta.join('') + '</p>' : '') +
         '<div class="spacer"></div>' +
         (link ? '<a class="dl" href="' + esc(link) + '"' + (a.type === 'web' ? ' target="_blank" rel="noopener">' + WEB + 'Ouvrir dans le navigateur' : '>' + DL + 'Télécharger') + '</a>' : '<span class="dl is-off">Bientôt disponible</span>') +
-        (dlfile ? '<a class="dl dl-2" href="' + esc(dlfile) + '" download="' + esc(dlname) + '">' + DL + 'Télécharger le fichier</a>' : '') +
+        (dlfile ? '<a class="dl dl-2" href="' + esc(dlfile) + '" download="' + esc(dlname) + '">' + DL + esc(String(a.texte_telecharger || '').trim() || 'Télécharger le fichier') + '</a>' : '') +
       '</div></article>';
   }
 

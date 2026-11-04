@@ -64,6 +64,20 @@
       "masquee": false
     },
     {
+      "nom": "Logiciel de caisse",
+      "sigle": "",
+      "pour": "les espaces numériques, associations et petites structures",
+      "description": "Encaissement avec comptes usagers (dépôt, crédit), tarifs selon la catégorie d'usager, journal des ventes, factures et rapport de caisse. Livré vierge : un assistant guide le paramétrage.",
+      "version": "1.0",
+      "systeme": "Windows 10 et 11",
+      "taille": "16 Mo (portable : 19 Mo)",
+      "lien": "https://github.com/CyberPlourin/logiciel-caisse/releases/latest/download/LogicielCaisse-Installation.exe",
+      "telecharger": "https://github.com/CyberPlourin/logiciel-caisse/releases/latest/download/LogicielCaisse-Portable.zip",
+      "texte_telecharger": "Version portable (zip)",
+      "image": "",
+      "masquee": false
+    },
+    {
       "nom": "Carport 3D sur photo",
       "sigle": "",
       "pour": "les particuliers et les services urbanisme",
