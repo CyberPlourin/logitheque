@@ -74,7 +74,7 @@
       "lien": "https://github.com/CyberPlourin/logiciel-caisse/releases/latest/download/LogicielCaisse-Installation.exe",
       "telecharger": "https://github.com/CyberPlourin/logiciel-caisse/releases/latest/download/LogicielCaisse-Portable.zip",
       "texte_telecharger": "Version portable (zip)",
-      "image": "",
+      "image": "images/caisse.png",
       "masquee": false
     },
     {
