@@ -115,8 +115,8 @@
       "systeme": "Téléphone Android (Chrome) ou navigateur web",
       "taille": "",
       "lien": "https://cyberplourin.github.io/planning-taches/",
-      "telecharger": "index.html",
-      "image": "taches.png",
+      "telecharger": "https://cyberplourin.github.io/planning-taches/index.html",
+      "image": "images/taches.png",
       "masquee": false
     }
   ]
