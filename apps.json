@@ -112,7 +112,7 @@
       "pour": "les services, associations et familles",
       "description": "Une grille de tâches à cocher, pensée pour le téléphone Android : on coche ce qui est fait, l'heure s'affiche, et on remet tout à zéro chaque semaine. Rien n'est envoyé sur Internet.",
       "version": "1.0",
-      "systeme": "Téléphone Android (Chrome) ou navigateur web",
+      "systeme": "Téléphone Android (Brave, Chrome) ou navigateur web",
       "taille": "",
       "lien": "https://cyberplourin.github.io/planning-taches/",
       "telecharger": "https://cyberplourin.github.io/planning-taches/index.html",
